@@ -54,3 +54,7 @@ class LoginPage:
         Clicks the logout button on the login page.
         """
         self.driver.find_element(By.ID, self.LOGOUT_BUTTON_ID).click()
+
+    def login_cred(self, user_name, password):
+        self.enter_username(user_name)
+        self.enter_password(password)

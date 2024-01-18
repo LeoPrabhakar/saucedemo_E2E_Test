@@ -10,6 +10,8 @@ def setup():
     driver = webdriver.Chrome(options=webdriver.ChromeOptions())
     driver.maximize_window()
     return driver
+    # yield driver
+    # driver.quit()
 
 
 # @pytest.fixture()

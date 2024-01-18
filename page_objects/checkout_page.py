@@ -52,3 +52,15 @@ class CheckoutPage:
         Clicks the 'Cancel' button on the checkout page.
         """
         self.driver.find_element(By.XPATH, self.CANCEL_BUTTON_XPATH).click()
+
+    def enter_user_info(self, first_name, last_name, pin_code):
+        """
+        Enters user information (first name, last name, and PIN code) on the checkout page.
+
+        :param first_name: The first name to be entered.
+        :param last_name: The last name to be entered.
+        :param pin_code: The PIN code to be entered.
+        """
+        self.enter_first_name(first_name)
+        self.enter_last_name(last_name)
+        self.enter_pin_code(pin_code)
