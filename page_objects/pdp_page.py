@@ -9,7 +9,6 @@ class PDPPage:
     def __init__(self, driver):
         """
         Constructor for the PDPPage class.
-
         :param driver: The WebDriver instance to interact with the browser.
         """
         self.driver = driver

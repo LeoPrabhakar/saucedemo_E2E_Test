@@ -14,7 +14,6 @@ class PLPPage:
     def __init__(self, driver):
         """
         Constructor for the PLPPage class.
-
         :param driver: The WebDriver instance to interact with the browser.
         """
         self.driver = driver
@@ -22,7 +21,6 @@ class PLPPage:
     def get_product_link_text_elements(self):
         """
         Finds and returns a list of elements representing product links' text on the product list page.
-
         :return: List of WebElement objects.
         """
         return self.driver.find_elements(By.XPATH, self.PRODUCT_LINK_TEXT_XPATH)
@@ -30,7 +28,6 @@ class PLPPage:
     def get_product_link_image_elements(self):
         """
         Finds and returns a list of elements representing product links' images on the product list page.
-
         :return: List of WebElement objects.
         """
         return self.driver.find_elements(By.XPATH, self.PRODUCT_LINK_IMAGE_XPATH)
@@ -38,9 +35,18 @@ class PLPPage:
     def get_plp_add_to_cart_button_elements(self):
         """
         Finds and returns a list of elements representing 'Add to Cart' buttons on the product list page.
-
         :return: List of WebElement objects.
         """
         return self.driver.find_elements(By.XPATH, self.ADD_TO_CART_BUTTON_XPATH)
 
+    def click_specific_product(self, product_name):
+        """
+        Clicks on a specific product in the product list based on the provided product name.
+        :param product_name: The name of the product to click.
+        """
+        product_lists = self.get_product_link_text_elements()
+        for product_list in product_lists:
+            if product_name in product_list.text:
+                product_list.click()
+                break
 

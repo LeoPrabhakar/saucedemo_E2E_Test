@@ -32,19 +32,13 @@ class Test_006_order_confirmation:
             # Login
             self.lp = LoginPage(self.driver)
             self.lp.login_cred(self.username, self.password)
-            # self.lp.enter_username(self.username)
-            # self.lp.enter_password(self.password)
             self.lp.click_login_button()
             self.logger.info("********** Login is completed **********")
 
             # Navigate to specific product on PLP page
             self.logger.info("********** Verifying clicking on specific product on PLP page **********")
             self.plp = PLPPage(self.driver)
-            product_lists = self.plp.get_product_link_text_elements()
-            for product_list in product_lists:
-                if self.product_name in product_list.text:
-                    product_list.click()
-                    break
+            self.plp.click_specific_product(self.product_name)
             self.logger.info("********** Specific product on PLP page is clicked and navigated to PDP**********")
 
             # Add to Cart on PDP page
@@ -64,9 +58,6 @@ class Test_006_order_confirmation:
             self.logger.info("********** Clicking on continue button on checkout page**********")
             self.checkout = CheckoutPage(self.driver)
             self.checkout.enter_user_info(self.first_name, self.last_name, self.pin_code)
-            # self.checkout.enter_first_name(self.first_name)
-            # self.checkout.enter_last_name(self.last_name)
-            # self.checkout.enter_pin_code(self.pin_code)
             self.checkout.click_continue_button()
             self.logger.info("********** Clicked on checkout button and navigated to order confirmation Page **********")
 

@@ -12,7 +12,6 @@ class CheckoutPage:
     def __init__(self, driver):
         """
         Constructor for the CheckoutPage class.
-
         :param driver: The WebDriver instance to interact with the browser.
         """
         self.driver = driver
@@ -20,7 +19,6 @@ class CheckoutPage:
     def enter_first_name(self, first_name):
         """
         Enters the first name in the corresponding input field on the checkout page.
-
         :param first_name: The first name to be entered.
         """
         self.driver.find_element(By.XPATH, self.FIRST_NAME_XPATH).send_keys(first_name)
@@ -28,7 +26,6 @@ class CheckoutPage:
     def enter_last_name(self, last_name):
         """
         Enters the last name in the corresponding input field on the checkout page.
-
         :param last_name: The last name to be entered.
         """
         self.driver.find_element(By.XPATH, self.LAST_NAME_XPATH).send_keys(last_name)
@@ -36,7 +33,6 @@ class CheckoutPage:
     def enter_pin_code(self, pin_code):
         """
         Enters the PIN code in the corresponding input field on the checkout page.
-
         :param pin_code: The PIN code to be entered.
         """
         self.driver.find_element(By.XPATH, self.PIN_CODE_XPATH).send_keys(pin_code)
@@ -56,7 +52,6 @@ class CheckoutPage:
     def enter_user_info(self, first_name, last_name, pin_code):
         """
         Enters user information (first name, last name, and PIN code) on the checkout page.
-
         :param first_name: The first name to be entered.
         :param last_name: The last name to be entered.
         :param pin_code: The PIN code to be entered.

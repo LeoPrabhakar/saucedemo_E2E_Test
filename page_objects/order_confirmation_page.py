@@ -10,7 +10,6 @@ class OrderConfirmation:
     def __init__(self, driver):
         """
         Constructor for the OrderConfirmation class.
-
         :param driver: The WebDriver instance to interact with the browser.
         """
         self.driver = driver

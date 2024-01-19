@@ -12,7 +12,6 @@ class LoginPage:
     def __init__(self, driver):
         """
         Constructor for the LoginPage class.
-
         :param driver: The WebDriver instance to interact with the browser.
         """
         self.driver = driver
@@ -20,7 +19,6 @@ class LoginPage:
     def enter_username(self, username):
         """
         Enters the username in the corresponding input field on the login page.
-
         :param username: The username to be entered.
         """
         username_element = self.driver.find_element(By.XPATH, self.USERNAME_TEXTBOX_XPATH)
@@ -30,7 +28,6 @@ class LoginPage:
     def enter_password(self, password):
         """
         Enters the password in the corresponding input field on the login page.
-
         :param password: The password to be entered.
         """
         password_element = self.driver.find_element(By.XPATH, self.PASSWORD_TEXTBOX_XPATH)

@@ -10,7 +10,6 @@ class CartPage:
     def __init__(self, driver):
         """
         Constructor for the CartPage class.
-
         :param driver: The WebDriver instance to interact with the browser.
         """
         self.driver = driver
