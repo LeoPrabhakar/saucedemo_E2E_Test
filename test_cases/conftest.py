@@ -12,7 +12,7 @@ def setup():
     driver.maximize_window()
     return driver
     # request.cls.driver = driver
-    # yield driver
+    # yield
     # driver.quit()
 
 

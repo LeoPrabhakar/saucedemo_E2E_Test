@@ -1,6 +1,7 @@
 # Approach 1:-
 
 import time
+import pytest
 from Saucedemo_new_E2E_test.page_objects.login_page import LoginPage
 from Saucedemo_new_E2E_test.page_objects.plp_page import PLPPage
 from Saucedemo_new_E2E_test.page_objects.pdp_page import PDPPage
@@ -9,8 +10,11 @@ from Saucedemo_new_E2E_test.page_objects.checkout_page import CheckoutPage
 from Saucedemo_new_E2E_test.page_objects.order_confirmation_page import OrderConfirmation
 from Saucedemo_new_E2E_test.utilities.read_properties import Read_Config_File
 from Saucedemo_new_E2E_test.utilities.custom_logger import Log_Gen
+from ddt import ddt, data, unpack , file_data
 
 
+# @pytest.mark.usefixtures("setup")
+# @ddt
 class Test_006_order_confirmation:
     # Load configuration and set up test data
     baseURL = Read_Config_File.get_url()
@@ -22,6 +26,9 @@ class Test_006_order_confirmation:
     pin_code = Read_Config_File.get_pin_code()
     logger = Log_Gen.log_gen()
 
+    # @data(("Sauce Labs Backpack",), ("Test.allTheThings() T-Shirt (Red)",))
+    # @unpack
+    # @file_data("../test_data/InputData.json")
     def test_order_confirmation(self, setup):
         try:
             # Initialize test setup
@@ -39,6 +46,7 @@ class Test_006_order_confirmation:
             self.logger.info("********** Verifying clicking on specific product on PLP page **********")
             self.plp = PLPPage(self.driver)
             self.plp.click_specific_product(self.product_name)
+            # self.plp.click_specific_product(product_name)
             self.logger.info("********** Specific product on PLP page is clicked and navigated to PDP**********")
 
             # Add to Cart on PDP page
@@ -77,7 +85,7 @@ class Test_006_order_confirmation:
             self.logger.info("******************** E2E testing completed ********************")
 
         finally:
-            self.driver.close
+            self.driver.quit()
 
 
 
