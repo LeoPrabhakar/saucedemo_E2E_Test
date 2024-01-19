@@ -5,11 +5,13 @@ from webdriver_manager.firefox import GeckoDriverManager
 
 
 @pytest.fixture()
+# def setup(request):
 def setup():
     ChromeDriverManager().install()
     driver = webdriver.Chrome(options=webdriver.ChromeOptions())
     driver.maximize_window()
     return driver
+    # request.cls.driver = driver
     # yield driver
     # driver.quit()
 

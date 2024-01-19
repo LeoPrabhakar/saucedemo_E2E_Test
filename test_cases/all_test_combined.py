@@ -14,6 +14,7 @@ from Saucedemo_new_E2E_test.utilities.custom_logger import Log_Gen
 
 
 # Define a test class for all test cases
+#@pytest.mark.usefixtures("setup")
 class Test_001_Login:
     # Load configuration and set up test data
     baseURL = Read_Config_File.get_url()
