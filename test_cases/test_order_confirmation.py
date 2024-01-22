@@ -39,7 +39,7 @@ class Test_006_order_confirmation:
             # Login
             self.lp = LoginPage(self.driver)
             self.lp.login_cred(self.username, self.password)
-            self.lp.click_login_button()
+            # self.lp.click_login_button()
             self.logger.info("********** Login is completed **********")
 
             # Navigate to specific product on PLP page
@@ -66,7 +66,7 @@ class Test_006_order_confirmation:
             self.logger.info("********** Clicking on continue button on checkout page**********")
             self.checkout = CheckoutPage(self.driver)
             self.checkout.enter_user_info(self.first_name, self.last_name, self.pin_code)
-            self.checkout.click_continue_button()
+            # self.checkout.click_continue_button()
             self.logger.info("********** Clicked on checkout button and navigated to order confirmation Page **********")
 
             # Order Confirmation

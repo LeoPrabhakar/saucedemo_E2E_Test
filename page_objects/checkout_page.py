@@ -59,3 +59,4 @@ class CheckoutPage:
         self.enter_first_name(first_name)
         self.enter_last_name(last_name)
         self.enter_pin_code(pin_code)
+        self.click_continue_button()

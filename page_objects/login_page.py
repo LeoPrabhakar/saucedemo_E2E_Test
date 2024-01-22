@@ -55,4 +55,5 @@ class LoginPage:
     def login_cred(self, user_name, password):
         self.enter_username(user_name)
         self.enter_password(password)
+        self.click_login_button()
 
