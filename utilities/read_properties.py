@@ -39,3 +39,8 @@ class Read_Config_File:
     def get_pin_code():
         pin_code = config.get('common info', 'pin_code')
         return pin_code
+
+    @staticmethod
+    def get_products():
+        products = [config['products'][key] for key in config['products'].keys()]
+        return products
